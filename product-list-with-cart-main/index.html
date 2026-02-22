@@ -1,74 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Product list with cart</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    link
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Product list with cart</title>
 
-  Desserts
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
 
-  Waffle with Berries
-  Waffle
-  6.50
-  Add to Cart
+  <script type="module">
+    import { ProductManager } from "./manager.js";
 
-  Vanilla Bean Crème Brûlée
-  Crème Brûlée
-  7.00
-  Add to Cart
+    let list = document.getElementById("list");
 
-  Macaron Mix of Five
-  Macaron
-  8.00
-  Add to Cart
+    // const getData = async () => {
+    //   const response = await fetch("./data.json");
+    //   const data = await response.json();
+    //   return data;
+    // };
 
-  Classic Tiramisu
-  Tiramisu
-  5.50
-  Add to Cart
+    // (async () => {
+    //   const data = await getData();
 
-  Pistachio Baklava
-  Baklava
-  4.00
-  Add to Cart
+    //   for (let i = 0; i < data.length; i++) {
+    //     let li_elem = document.createElement("li");
+    //     list.appendChild(li_elem);
+    //     list.childNodes[i].textContent = data[i].name;
+    //   }
+    // })();
+    const manager = await new ProductManager().init();
+    manager.getUlList(list)
+    // (async () => {
+    //   const data = manager.getProducts();
 
-  Lemon Meringue Pie
-  Pie
-  5.00
-  Add to Cart
+    //   for (let i = 0; i < data.length; i++) {
+    //     let li_elem = document.createElement("li");
+    //     list.appendChild(li_elem);
+    //     list.childNodes[i].textContent = data[i].name;
+    //   }
+    // })();
+  </script>
 
-  Red Velvet Cake
-  Cake
-  4.50
-  Add to Cart
+  <body>
+    <div>
+      <ul id="list"></ul>
+    </div>
 
-  Salted Caramel Brownie
-  Brownie
-  4.50
-  Add to Cart
+    <!-- Desserts Waffle with Berries Waffle 6.50 Add to Cart Vanilla Bean Crème
+    Brûlée Crème Brûlée 7.00 Add to Cart Macaron Mix of Five Macaron 8.00 Add to
+    Cart Classic Tiramisu Tiramisu 5.50 Add to Cart Pistachio Baklava Baklava
+    4.00 Add to Cart Lemon Meringue Pie Pie 5.00 Add to Cart Red Velvet Cake
+    Cake 4.50 Add to Cart Salted Caramel Brownie Brownie 4.50 Add to Cart
+    Vanilla Panna Cotta Panna Cotta 6.50 Add to Cart Your Cart 
+    Your added items will appear here -->
 
-  Vanilla Panna Cotta
-  Panna Cotta
-  6.50
-  Add to Cart
-
-  Your Cart (<!-- Quantity -->)
-  Your added items will appear here
-
-  <div class="attribution">
+    <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  </div> -->
+  </body>
 </html>
